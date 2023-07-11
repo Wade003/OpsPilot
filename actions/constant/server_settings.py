@@ -7,9 +7,7 @@ from pydantic import BaseSettings
 
 class ServerSettings(BaseSettings):
     fallback_llm: str = 'OPENAI'
-    fallback_prompt: str = '扮演专业的运维工程师'
 
-    openai_model_name: Optional[str] = None
     openai_endpoint: Optional[str] = None
     openai_key: Optional[str] = None
     openai_api_temperature: Optional[float] = 0.7
@@ -35,13 +33,6 @@ class ServerSettings(BaseSettings):
     embed_model_cache_home: Optional[str] = 'cache/models'
     vec_db_path: Optional[str] = 'vec_db'
     indexer_db_path: Optional[str] = 'indexdir'
-    
-    token: str
-    encoding_aes_key: str
-    corp_id: str
-    secret: str
-    access_token: str
-    agent_id: str
 
     class Config:
         env_file = '.env'

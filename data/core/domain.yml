@@ -5,12 +5,17 @@ session_config:
   carry_over_slots_to_new_session: true
 
 
+entities:
+  - ip_address
+  - internal_job_name
+
 intents:
-  - chitchat
-  - greet
-  - goodbye
-  - deny
-  - affirm
+  - 确认
+  - 取消
+  - 在线问答
+  - 无法理解
+  - internal_exec_job
+
 
 actions:
   - action_reset_all_slot
@@ -19,6 +24,9 @@ actions:
   - action_post_weops_fallback
   - action_online_chat
   - validate_online_chat_form
+  - action_execute_job
+  - action_set_entities_values
+  - action_pre_execute_job
 
 
 forms:
@@ -34,13 +42,27 @@ slots:
     mappings:
       - type: from_text
         conditions:
-         - active_loop: online_chat_form
-           requested_slot: online_chat_url
+          - active_loop: online_chat_form
+            requested_slot: online_chat_url
   online_chat_query:
     type: text
     influence_conversation: true
     mappings:
       - type: from_text
         conditions:
-         - active_loop: online_chat_form
-           requested_slot: online_chat_query
+          - active_loop: online_chat_form
+            requested_slot: online_chat_query
+
+  internal_job_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: internal_job_name
+
+  ip_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: ip_address

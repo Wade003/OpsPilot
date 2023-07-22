@@ -150,14 +150,23 @@ tracker_store:
 | EMBED_MODEL_NAME       | embed模型名称                            | shibing624/text2vec-base-chinese(默认)    |
 | EMBED_MODEL_CACHE_HOME | embed模型缓存路径                          | cache/models(默认)                        |
 | INDEXER_DB_PATH        | 倒排索引文件存放路径                           | indexdir(默认)                            |
+| LLM_MAX_HISTORY        | 闲聊模式下，最多传递的历史消息数量                    | 10(默认)                                  |                 
 
 # 版本说明
+
+## 0.5
+
+* [新增]Redis 故障处置预案规则
 
 ## 0.4
 
 * [新增]Word文档索引能力
 * [新增]PPT文档索引能力
-* [新增]新增企业微信Channel
+* [新增]企业微信机器人Channel
+* [新增]企业微信Channel，企业微信Channel支持Dall与GPT问答能力
+* [优化]闲聊模式的Prompt
+* [优化]闲聊模式添加LLM_MAX_HISTORY变量，控制传递的历史记录数量
+* [优化]使用FAISS替换chromadb
 
 ## 0.3
 

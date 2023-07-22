@@ -14,7 +14,6 @@ typing_extensions==4.5.0
 tiktoken==0.4.0
 unstructured==0.7.3
 pdf2image==1.16.3
-chromadb==0.3.26
 sentence_transformers==2.2.2
 
 pgvector==0.1.8
@@ -29,3 +28,8 @@ trafilatura==1.6.1
 docx2txt==0.8
 
 pycryptodome==3.18.0
+
+pymysql==1.1.0
+
+py2neo==2021.2.3
+

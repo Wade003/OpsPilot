@@ -34,6 +34,14 @@ class ServerSettings(BaseSettings):
     vec_db_path: Optional[str] = 'vec_db'
     indexer_db_path: Optional[str] = 'indexdir'
 
+    default_thinking_message = 'OpsPilot正在思考中........'
+
+    chatgpt_model_max_history: Optional[int] = 10
+
+    neo4j_url: Optional[str] = ''
+    neo4j_username: Optional[str] = ''
+    neo4j_password: Optional[str] = ''
+
     class Config:
         env_file = '.env'
 
